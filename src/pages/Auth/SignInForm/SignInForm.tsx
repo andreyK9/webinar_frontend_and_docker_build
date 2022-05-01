@@ -2,10 +2,9 @@ import React from 'react';
 import { Form, Formik } from 'formik';
 
 import { AuthTitle } from '../AuthTitle';
-import { EmailField, PasswordField } from 'components/FormFields';
-import { CheckboxFiled } from 'components/FormFields/Checkbox';
+import { CheckboxFiled, EmailField, PasswordField } from 'components/FormFields';
 import { ButtonForm } from 'components/Buttons';
-import { ProblemMessage } from './ProblemMessage';
+import { ProblemMessage } from 'pages/Auth/ProblemMessage';
 
 export const SignInForm: React.FC = () => {
   return (
