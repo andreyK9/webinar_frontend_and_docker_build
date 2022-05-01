@@ -2,7 +2,7 @@ import React from 'react';
 import { Form, Formik } from 'formik';
 
 import { AuthTitle } from '../AuthTitle';
-import { ConfirmDescription } from './Description';
+import { ConfirmDescription } from '../Description';
 import { ReadOnlyField, TextField } from 'components/FormFields';
 import { ButtonForm } from 'components/Buttons';
 import { ProblemMessage } from '../ProblemMessage';

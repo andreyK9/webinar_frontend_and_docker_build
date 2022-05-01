@@ -4,3 +4,4 @@ export * from './Text';
 export * from './Checkbox';
 export * from './Referral';
 export * from './ReadOnly';
+export * from './Phone';
