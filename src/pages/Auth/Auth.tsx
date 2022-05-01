@@ -2,7 +2,7 @@ import React from 'react';
 
 import { SignInForm } from './SignInForm';
 import { SignUpForm } from './SignUpForm';
-import { ConfirmMail } from './ConfirmMail';
+import { ConfirmEMail } from './ConfirmEMail';
 import { ConfirmPhone } from './ConfirmPhone';
 
 export const Auth: React.FC = () => {
@@ -12,7 +12,7 @@ export const Auth: React.FC = () => {
 
       <SignUpForm />
 
-      <ConfirmMail />
+      <ConfirmEMail />
 
       <ConfirmPhone />
     </div>
