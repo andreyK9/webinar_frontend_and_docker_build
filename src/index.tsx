@@ -1,8 +1,6 @@
-import React, { FC } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 
-import styles from './style.css';
-
-const App: FC = () => <h1 className={styles.app}>Hello world!</h1>
+import { App } from './App';
 
 ReactDOM.render(<App />, document.getElementById('root'));
