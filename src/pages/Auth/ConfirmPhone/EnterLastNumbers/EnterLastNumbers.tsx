@@ -4,8 +4,12 @@ import React from 'react';
 import { ConfirmDescription } from 'pages/Auth/Description';
 import { PhoneField, ReadOnlyField } from 'components/FormFields';
 import { ButtonForm } from 'components/Buttons';
+import { useAuthCancel, usePhoneConfirm } from 'pages/Auth/hooks';
 
 export const EnterLastNumbers: React.FC = () => {
+  const confirmPhone = usePhoneConfirm();
+  const cancel = useAuthCancel();
+
   return (
     <>
       <ConfirmDescription>first</ConfirmDescription>
@@ -16,7 +20,7 @@ export const EnterLastNumbers: React.FC = () => {
 
       <ReadOnlyField name='phone' />
 
-      <Formik initialValues={{}} onSubmit={() => {}}>
+      <Formik initialValues={{}} onSubmit={confirmPhone}>
         <Form>
           <PhoneField name='lastWords' />
 
@@ -24,7 +28,7 @@ export const EnterLastNumbers: React.FC = () => {
 
           <ButtonForm>Repeat</ButtonForm>
 
-          <ButtonForm>Cancel</ButtonForm>
+          <ButtonForm onClick={cancel}>Cancel</ButtonForm>
         </Form>
       </Formik>
     </>

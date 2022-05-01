@@ -10,12 +10,13 @@ export const LanguageSelect: React.FC = () => {
   const [language, setLanguage] = useState({} as LanguageItemProps);
 
   return (
-    <DropdownArrow open={visible}>
-      <LanguageMenuItem {...language} />
-
-      <Dropdown onVisibleChange={setVisible}>
-        <LanguageMenu onChange={setLanguage} />
-      </Dropdown>
-    </DropdownArrow>
+    <Dropdown
+      onVisibleChange={setVisible}
+      content={<LanguageMenu onChange={setLanguage} />}
+    >
+      <DropdownArrow open={visible}>
+        <LanguageMenuItem {...language} />
+      </DropdownArrow>
+    </Dropdown>
   );
 };

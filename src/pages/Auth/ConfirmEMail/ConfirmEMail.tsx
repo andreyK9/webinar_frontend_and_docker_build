@@ -1,14 +1,18 @@
 import React from 'react';
 import { Form, Formik } from 'formik';
 
-import { AuthTitle } from '../AuthTitle';
-import { ConfirmDescription } from '../Description';
+import { AccountBlocked } from './AccountBlocked';
+import { AuthTitle } from 'pages/Auth/AuthTitle';
+import { ConfirmDescription } from 'pages/Auth/Description';
+import { ProblemMessage } from 'pages/Auth/ProblemMessage';
 import { ReadOnlyField, TextField } from 'components/FormFields';
 import { ButtonForm } from 'components/Buttons';
-import { ProblemMessage } from '../ProblemMessage';
-import { AccountBlocked } from './AccountBlocked';
+import { useEmailConfirm, useAuthCancel } from 'pages/Auth/hooks';
 
 export const ConfirmEMail: React.FC = () => {
+  const confirmEMail = useEmailConfirm();
+  const cancelAuth = useAuthCancel();
+
   return (
     <div>
       <AccountBlocked>
@@ -18,13 +22,13 @@ export const ConfirmEMail: React.FC = () => {
 
         <ReadOnlyField name='email' />
 
-        <Formik initialValues={{}} onSubmit={() => {}}>
+        <Formik initialValues={{}} onSubmit={confirmEMail}>
           <Form>
             <TextField name='codeFromMail' />
 
             <ButtonForm>Confirm</ButtonForm>
 
-            <ButtonForm>Cancel</ButtonForm>
+            <ButtonForm onClick={cancelAuth}>Cancel</ButtonForm>
           </Form>
         </Formik>
 

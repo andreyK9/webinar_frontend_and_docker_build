@@ -1,5 +1,7 @@
 import React from 'react';
 
-export const ButtonForm: React.FC = () => {
-  return <div>ButtonForm</div>;
+import { ButtonFormProps } from './types';
+
+export const ButtonForm: React.FC<ButtonFormProps> = ({ onClick }) => {
+  return <div onClick={onClick}>ButtonForm</div>;
 };
