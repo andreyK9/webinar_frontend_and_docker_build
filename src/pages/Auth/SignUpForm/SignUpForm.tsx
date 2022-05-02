@@ -21,7 +21,16 @@ export const SignUpForm: React.FC = () => {
     <div>
       <AuthTitle>SignUpForm</AuthTitle>
 
-      <Formik initialValues={{}} onSubmit={signUp}>
+      <Formik
+        initialValues={{
+          firstName: '',
+          lastName: '',
+          email: '',
+          password: '',
+          personalAgree: '',
+        }}
+        onSubmit={signUp}
+      >
         <Form>
           <TextField name='firstName' />
 
@@ -39,9 +48,9 @@ export const SignUpForm: React.FC = () => {
 
           <ButtonForm onClick={cancelAuth}>Cancel</ButtonForm>
         </Form>
-
-        <ProblemMessage />
       </Formik>
+
+      <ProblemMessage />
     </div>
   );
 };

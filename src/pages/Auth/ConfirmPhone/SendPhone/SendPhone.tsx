@@ -16,7 +16,7 @@ export const SendPhone: React.FC = () => {
 
       <ConfirmDescription>second</ConfirmDescription>
 
-      <Formik initialValues={{}} onSubmit={sendPhone}>
+      <Formik initialValues={{ phone: '' }} onSubmit={sendPhone}>
         <Form>
           <PhoneField name='phone' />
 

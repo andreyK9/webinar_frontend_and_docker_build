@@ -1,5 +1,5 @@
-import { MouseEventHandler } from 'react';
+import { ButtonHTMLAttributes, MouseEventHandler } from 'react';
 
-export interface ButtonFormProps {
-  onClick?: MouseEventHandler<HTMLDivElement>;
+export interface ButtonFormProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  onClick?: MouseEventHandler<HTMLElement>;
 }

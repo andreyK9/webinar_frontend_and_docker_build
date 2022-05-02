@@ -1,0 +1,2 @@
+- Для поднятия девелоперской сборки docker-compose -f docker-compose.dev.yml up
+- Для поднятия продовской сборки docker-compose -f docker-compose.yml up

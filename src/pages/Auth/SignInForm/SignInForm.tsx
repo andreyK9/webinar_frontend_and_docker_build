@@ -15,7 +15,14 @@ export const SignInForm: React.FC = () => {
     <div>
       <AuthTitle>SignInForm</AuthTitle>
 
-      <Formik initialValues={{}} onSubmit={onSubmit}>
+      <Formik
+        initialValues={{
+          email: '',
+          password: '',
+          saveData: '',
+        }}
+        onSubmit={onSubmit}
+      >
         <Form>
           <EmailField name='email' />
 

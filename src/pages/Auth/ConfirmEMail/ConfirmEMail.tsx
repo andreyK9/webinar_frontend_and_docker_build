@@ -22,7 +22,7 @@ export const ConfirmEMail: React.FC = () => {
 
         <ReadOnlyField name='email' />
 
-        <Formik initialValues={{}} onSubmit={confirmEMail}>
+        <Formik initialValues={{ codeFromMail: '' }} onSubmit={confirmEMail}>
           <Form>
             <TextField name='codeFromMail' />
 

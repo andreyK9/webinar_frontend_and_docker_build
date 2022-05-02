@@ -56,6 +56,7 @@ const tsRule: RuleSetRule = {
 
 const webAppConfig: Configuration & { devServer?: Record<string, unknown> } = {
   mode: isDev ? 'development' : 'production',
+  devtool: isDev ? 'eval-source-map' : undefined,
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.json'],
     modules: ['node_modules', path.resolve(__dirname, 'src')],
