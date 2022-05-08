@@ -22,29 +22,31 @@ const allPlugins: WebpackPluginInstance[] = isDev
   ? /* dev  */ [htmlWebpackPlugin]
   : /* prod */ [htmlWebpackPlugin, miniCssExtractPlugin];
 
-const tsRuleBase: RuleSetRule = {
-  test: /\.tsx?$/i,
-  loader: 'ts-loader',
-};
-
 const loaderMiniCssExtractPlugin: RuleSetUseItem = MiniCssExtractPlugin.loader;
 const ruleCss: RuleSetRule = {
-  test: /\.css$/,
+  test: /\.scss$/,
   include: join(__dirname, 'src'),
   exclude: /node_modules/,
   use: [
     isDev ? 'style-loader' : loaderMiniCssExtractPlugin,
-    {
-      loader: 'css-loader',
-      options: {
-        importLoaders: 1,
-        modules: {
-          exportLocalsConvention: 'camelCase',
-          localIdentName: isDev ? '[local]___[hash:base64:3]' : '[hash:base64:6]',
-        },
-      },
-    },
+    'css-loader',
+    // {
+    //   loader: 'css-loader',
+    //   options: {
+    //     importLoaders: 1,
+    //     modules: {
+    //       exportLocalsConvention: 'camelCase',
+    //       localIdentName: isDev ? '[local]___[hash:base64:3]' : '[hash:base64:6]',
+    //     },
+    //   },
+    // },
+    'sass-loader',
   ],
+};
+
+const tsRuleBase: RuleSetRule = {
+  test: /\.tsx?$/i,
+  loader: 'ts-loader',
 };
 
 const tsRule: RuleSetRule = {
@@ -53,6 +55,8 @@ const tsRule: RuleSetRule = {
     configFile: join(__dirname, 'tsconfig.json'),
   },
 };
+
+const svgRule: RuleSetRule = { test: /\.svg$/, loader: 'react-svg-loader' };
 
 const webAppConfig: Configuration & { devServer?: Record<string, unknown> } = {
   mode: isDev ? 'development' : 'production',
@@ -70,7 +74,7 @@ const webAppConfig: Configuration & { devServer?: Record<string, unknown> } = {
   target: 'web',
   plugins: allPlugins,
   module: {
-    rules: [tsRule, ruleCss],
+    rules: [tsRule, ruleCss, svgRule],
   },
   devServer: {
     port: 3000,

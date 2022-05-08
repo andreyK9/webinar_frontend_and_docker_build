@@ -6,6 +6,8 @@ import { store } from 'store';
 import { Root } from 'pages/Root';
 import { Auth } from 'pages/Auth';
 
+import './App.scss';
+
 export const App: React.FC = () => (
   <Provider store={store}>
     <BrowserRouter>

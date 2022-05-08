@@ -1,0 +1,11 @@
+.language-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  &__description {
+    font-weight: 600;
+    color: var(--black-color);
+    text-transform: uppercase;
+  }
+}
