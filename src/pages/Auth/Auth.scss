@@ -1,0 +1,14 @@
+.auth {
+  &__wrapper {
+    justify-self: center;
+    align-self: center;
+    margin-top: -90px;
+  }
+
+  &__form {
+    background-color: #fff;
+    border-radius: 15px;
+    max-width: 697px;
+    padding: 80px;
+  }
+}

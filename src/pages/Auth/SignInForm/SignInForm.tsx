@@ -1,5 +1,6 @@
 import React from 'react';
 import { Form, Formik } from 'formik';
+import { Trans, Translation } from 'react-i18next';
 
 import { AuthTitle } from '../AuthTitle';
 import { CheckboxFiled, EmailField, PasswordField } from 'components/FormFields';
@@ -12,8 +13,10 @@ export const SignInForm: React.FC = () => {
   const openSignUp = useSignUpOpen();
 
   return (
-    <div>
-      <AuthTitle>SignInForm</AuthTitle>
+    <div className='auth__form'>
+      <AuthTitle>
+        <Translation>{t => t('sign in form title')}</Translation>
+      </AuthTitle>
 
       <Formik
         initialValues={{
@@ -30,9 +33,13 @@ export const SignInForm: React.FC = () => {
 
           <CheckboxFiled name='saveData' />
 
-          <ButtonForm>Submit</ButtonForm>
+          <ButtonForm>
+            <Trans>submit button</Trans>
+          </ButtonForm>
 
-          <ButtonForm onClick={openSignUp}>Sign Up</ButtonForm>
+          <ButtonForm onClick={openSignUp}>
+            <Trans>sign up button</Trans>
+          </ButtonForm>
         </Form>
       </Formik>
 

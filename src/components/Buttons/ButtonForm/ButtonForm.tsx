@@ -2,10 +2,10 @@ import React from 'react';
 
 import { ButtonFormProps } from './types';
 
-export const ButtonForm: React.FC<ButtonFormProps> = ({ onClick }) => {
+export const ButtonForm: React.FC<ButtonFormProps> = ({ onClick, children }) => {
   return (
     <button onClick={onClick} type='submit'>
-      ButtonForm
+      {children}
     </button>
   );
 };
