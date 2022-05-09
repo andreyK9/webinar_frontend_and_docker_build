@@ -4,10 +4,11 @@ import { Dropdown, DropdownArrow } from 'components/Dropdown';
 import { LanguageMenu } from './LanguageMenu';
 import { LanguageMenuItem } from './LanguageMenuItem';
 import { LanguageItemProps } from './types';
+import { RuLanguage } from './LanguageMenu/const';
 
 export const LanguageSelect: React.FC = () => {
   const [visible, setVisible] = useState(false);
-  const [language, setLanguage] = useState({} as LanguageItemProps);
+  const [language, setLanguage] = useState<LanguageItemProps>(RuLanguage);
 
   return (
     <Dropdown
@@ -15,7 +16,7 @@ export const LanguageSelect: React.FC = () => {
       content={<LanguageMenu onChange={setLanguage} />}
     >
       <DropdownArrow open={visible}>
-        <LanguageMenuItem {...language} />
+        <LanguageMenuItem className='header__language' {...language} />
       </DropdownArrow>
     </Dropdown>
   );

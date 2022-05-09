@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: #f3f3f3;
+  background: var(--grey2-color);
   font-family: 'Open Sans';
   font-style: normal;
   font-size: 16px;
@@ -11,4 +11,7 @@ body {
 
 :root {
   --black-color: #333;
+  --bg-color: linear-gradient(180deg, #34457a 0%, rgba(34, 46, 86, 0.99) 100%);
+  --grey2-color: #f3f3f3;
+  --inner-bolder-color: #e6e6e6;
 }

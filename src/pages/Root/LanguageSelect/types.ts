@@ -1,6 +1,10 @@
+import { MouseEventHandler, ReactElement } from 'react';
+
 export interface LanguageItemProps {
-  iconSrc: string;
+  icon: ReactElement<any, any>;
   name?: string;
+  className?: string;
+  onClick?: MouseEventHandler<HTMLDivElement>;
 }
 
 export interface LanguageMenuProps {

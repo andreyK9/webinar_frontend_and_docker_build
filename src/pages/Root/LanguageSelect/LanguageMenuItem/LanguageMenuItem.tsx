@@ -1,15 +1,20 @@
 import React from 'react';
 
-import { Ru } from '../flags';
+import { mergeClasses } from 'helpers';
 import { LanguageItemProps } from '../types';
 
 import './LanguageMenuItem.scss';
 
-export const LanguageMenuItem: React.FC<LanguageItemProps> = () => {
+export const LanguageMenuItem: React.FC<LanguageItemProps> = ({
+  icon,
+  name,
+  className,
+  onClick,
+}) => {
   return (
-    <div className='language-menu-item'>
-      <Ru />
-      <div className='language-menu-item__description'>рус</div>
+    <div onClick={onClick} className={mergeClasses('language-menu-item', className)}>
+      {icon}
+      <div className='language-menu-item__description'>{name}</div>
     </div>
   );
 };
