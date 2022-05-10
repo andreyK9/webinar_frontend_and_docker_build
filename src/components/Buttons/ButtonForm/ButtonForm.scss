@@ -8,6 +8,7 @@
   color: var(--orange-color);
   background-color: #fff;
   border-radius: var(--button-bolder-radius);
+  cursor: pointer;
 
   &--disabled {
     background-color: var(--disabled-color);

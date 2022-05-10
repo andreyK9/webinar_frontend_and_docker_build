@@ -1,8 +1,8 @@
 import React from 'react';
-import { Field, FieldInputProps } from 'formik';
+import { Field, FieldAttributes } from 'formik';
 
 import './InputFieald.scss';
 
-export const InputFieald = <T,>(props: FieldInputProps<T>) => {
+export const InputFieald = (props: FieldAttributes<any>) => {
   return <Field className='input-field' {...props} />;
 };

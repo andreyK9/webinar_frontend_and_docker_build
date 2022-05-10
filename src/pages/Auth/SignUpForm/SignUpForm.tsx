@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, Formik } from 'formik';
-import { useTranslation } from 'react-i18next';
+import { t } from 'i18next';
 
 import { AuthTitle } from 'pages/Auth/AuthTitle';
 import {
@@ -13,9 +13,10 @@ import { ButtonForm } from 'components/Buttons';
 import { ProblemMessage } from 'pages/Auth/ProblemMessage';
 import { ReferralCode } from 'pages/Auth/ReferralCode';
 import { useSignUp, useAuthCancel } from 'pages/Auth/hooks';
+import { useNavigate } from 'react-router-dom';
 
 export const SignUpForm: React.FC = () => {
-  const { t } = useTranslation();
+  const navigate = useNavigate();
   const signUp = useSignUp();
   const cancelAuth = useAuthCancel();
 
@@ -46,7 +47,9 @@ export const SignUpForm: React.FC = () => {
 
           <CheckboxFiled name='personalAgree'>{t('personal Agree')}</CheckboxFiled>
 
-          <ButtonForm type='submit'>{t('sign up submit button')}</ButtonForm>
+          <ButtonForm onClick={() => navigate('/auth/confirm-email')}>
+            {t('sign up submit button')}
+          </ButtonForm>
 
           <ButtonForm onClick={cancelAuth}>{t('cancel button')}</ButtonForm>
         </Form>

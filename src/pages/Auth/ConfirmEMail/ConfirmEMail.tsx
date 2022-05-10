@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, Formik } from 'formik';
-import { useTranslation } from 'react-i18next';
+import { t } from 'i18next';
 
 import { AccountBlocked } from './AccountBlocked';
 import { AuthTitle } from 'pages/Auth/AuthTitle';
@@ -9,15 +9,16 @@ import { ProblemMessage } from 'pages/Auth/ProblemMessage';
 import { ReadOnlyField, TextField } from 'components/FormFields';
 import { ButtonForm } from 'components/Buttons';
 import { useEmailConfirm, useAuthCancel } from 'pages/Auth/hooks';
+import { useNavigate } from 'react-router-dom';
 
 export const ConfirmEMail: React.FC = () => {
-  const { t } = useTranslation();
+  const navigate = useNavigate();
   const confirmEMail = useEmailConfirm();
   const cancelAuth = useAuthCancel();
 
   return (
     <div className='auth__form'>
-      <AccountBlocked isBlocked={true}>
+      <AccountBlocked isBlocked={false}>
         <AuthTitle>{t('confirm mail form title')}</AuthTitle>
 
         <ConfirmDescription>{t('confirm mail description')}</ConfirmDescription>
@@ -31,7 +32,7 @@ export const ConfirmEMail: React.FC = () => {
 
             <TextField name='codeFromMail' label={t('from email code')} />
 
-            <ButtonForm disabled type='submit'>
+            <ButtonForm onClick={() => navigate('/auth/confirm-phone')}>
               {t('confirm button')}
             </ButtonForm>
 

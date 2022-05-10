@@ -1,6 +1,7 @@
 import React from 'react';
 import { Form, Formik } from 'formik';
-import { useTranslation } from 'react-i18next';
+import { t } from 'i18next';
+import * as Yup from 'yup';
 
 import { AuthTitle } from '../AuthTitle';
 import { CheckboxFiled, EmailField, PasswordField } from 'components/FormFields';
@@ -8,8 +9,11 @@ import { ButtonForm } from 'components/Buttons';
 import { ProblemMessage } from 'pages/Auth/ProblemMessage';
 import { useSignUpOpen, useSignIn } from 'pages/Auth/hooks';
 
+const DisplayingErrorMessagesSchema = Yup.object().shape({
+  email: Yup.string().email('Invalid email').required('Required'),
+});
+
 export const SignInForm: React.FC = () => {
-  const { t } = useTranslation();
   const onSubmit = useSignIn();
   const openSignUp = useSignUpOpen();
 
@@ -23,6 +27,7 @@ export const SignInForm: React.FC = () => {
           password: '',
           saveData: '',
         }}
+        validationSchema={DisplayingErrorMessagesSchema}
         onSubmit={onSubmit}
       >
         <Form className='auth__form-instance'>
