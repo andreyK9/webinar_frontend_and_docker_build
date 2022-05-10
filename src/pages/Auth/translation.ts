@@ -2,6 +2,11 @@ export const auth = {
   'sign in form title': 'Вход в личный кабинет',
   'sign up form title': 'Регистрация личного кабинета',
   'confirm mail form title': 'Подтверждение email',
+  'confirm phone form title': 'Верификация телефона',
+  'confirm phone fist description':
+    'Введите Ваш номер телефона с +, без пробелов и скобок, и нажмите Запросить звонок.',
+  'confirm phone second description':
+    'На указанный номер будет осуществлен дозвон. Отвечать на него не нужно. От Вас необходимо ввести последние 6 цифр номера этого телефона.',
   'confirm mail description':
     'Вы успешно зарегистрированы! Подтвердите Ваш email. Код отправлен Вам на почту. Если письмо не приходит, проверьте папку спам и вкладку промоакции.',
   'confirm mail error title': 'Ошибка: аккаунт заблокирован',
@@ -18,7 +23,9 @@ export const auth = {
   'cancel button': 'Отмена',
   'sign up button': 'Регистрация',
   'sign up submit button': 'Зарегистрировать',
+  'need call button': 'Запросить звонок',
   'email field': 'Email',
+  'phone field': 'Телефон',
   'name field': 'Имя',
   'surname field': 'Фамилия',
   'password field': 'Пароль',

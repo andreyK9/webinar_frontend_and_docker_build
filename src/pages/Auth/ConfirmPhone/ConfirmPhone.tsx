@@ -1,20 +1,21 @@
 import React from 'react';
+import { t } from 'i18next';
 
 import { SendPhone } from './SendPhone';
-import { EnterLastNumbers } from './EnterLastNumbers';
+// import { EnterLastNumbers } from './EnterLastNumbers';
 import { AuthTitle } from '../AuthTitle';
-import { ProblemMessage } from '../ProblemMessage';
+// import { ProblemMessage } from '../ProblemMessage';
 
 export const ConfirmPhone: React.FC = () => {
   return (
-    <div>
-      <AuthTitle>ConfirmPhone</AuthTitle>
+    <div className='auth__form'>
+      <AuthTitle>{t('confirm phone form title')}</AuthTitle>
 
       <SendPhone />
 
-      <EnterLastNumbers />
+      {/* <EnterLastNumbers /> */}
 
-      <ProblemMessage />
+      {/* <ProblemMessage /> */}
     </div>
   );
 };

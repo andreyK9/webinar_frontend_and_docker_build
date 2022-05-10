@@ -18,10 +18,10 @@ export const EnterLastNumbers: React.FC = () => {
 
       <ConfirmDescription>third</ConfirmDescription>
 
-      <ReadOnlyField name='phone' />
-
       <Formik initialValues={{ lastWords: '' }} onSubmit={confirmPhone}>
         <Form>
+          <ReadOnlyField name='phone' />
+
           <PhoneField name='lastWords' />
 
           <ButtonForm>Submit</ButtonForm>

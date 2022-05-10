@@ -1,5 +1,6 @@
-import { Form, Formik } from 'formik';
 import React from 'react';
+import { Form, Formik } from 'formik';
+import { t } from 'i18next';
 
 import { ConfirmDescription } from 'pages/Auth/Description';
 import { PhoneField } from 'components/FormFields';
@@ -12,17 +13,19 @@ export const SendPhone: React.FC = () => {
 
   return (
     <>
-      <ConfirmDescription>first</ConfirmDescription>
-
-      <ConfirmDescription>second</ConfirmDescription>
-
       <Formik initialValues={{ phone: '' }} onSubmit={sendPhone}>
-        <Form>
-          <PhoneField name='phone' />
+        <Form className='auth__form-instance'>
+          <ConfirmDescription>{t('confirm phone fist description')}</ConfirmDescription>
 
-          <ButtonForm>Submit</ButtonForm>
+          <ConfirmDescription>{t('confirm phone second description')}</ConfirmDescription>
 
-          <ButtonForm onClick={cancel}>Cancel</ButtonForm>
+          <PhoneField required name='phone' label={t('phone field')} />
+
+          <ButtonForm disabled type='submit'>
+            {t('need call button')}
+          </ButtonForm>
+
+          <ButtonForm onClick={cancel}>{t('cancel button')}</ButtonForm>
         </Form>
       </Formik>
     </>
