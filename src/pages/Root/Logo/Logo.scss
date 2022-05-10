@@ -1,0 +1,17 @@
+.logo {
+  & > svg:first-child {
+    display: inline;
+
+    @media (max-width: 360px) {
+      display: none;
+    }
+  }
+
+  & > svg:last-child {
+    display: none;
+
+    @media (max-width: 360px) {
+      display: inline;
+    }
+  }
+}

@@ -30,7 +30,7 @@ export const SignInForm: React.FC = () => {
 
           <PasswordField name='password' label={t('password field')} required />
 
-          <CheckboxFiled name='saveData' />
+          <CheckboxFiled name='saveData'>{t('sign in form checkbox')}</CheckboxFiled>
 
           <ButtonForm type='submit'>{t('submit button')}</ButtonForm>
 

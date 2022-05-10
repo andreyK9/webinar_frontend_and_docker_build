@@ -1,7 +1,12 @@
 .header {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding-top: 60px;
+
+  @media (max-width: 360px) {
+    padding: 20px;
+  }
 
   &__language {
     > .language-menu-item__description {

@@ -1,15 +1,32 @@
 .auth {
   &__wrapper {
     justify-self: center;
-    align-self: center;
+    display: flex;
+    align-items: center;
     margin-top: -90px;
+    min-height: 850px;
+
+    @media (max-width: 360px) {
+      margin-top: 0;
+      min-height: auto;
+    }
   }
 
   &__form {
     background-color: #fff;
     border-radius: 15px;
-    max-width: 697px;
+    max-width: 467px;
     padding: 80px;
+    padding-top: 65px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @media (max-width: 360px) {
+      padding: 16px;
+      padding-bottom: 80px;
+      border-radius: unset;
+    }
   }
 
   &__form-instance {

@@ -13,6 +13,7 @@ export const Label: React.FC<LabelType> = ({ children, label, required, ...props
       <label className={addRequeredBy(required)} {...props}>
         {label}
       </label>
+
       {children}
     </div>
   );

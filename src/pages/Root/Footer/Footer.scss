@@ -1,6 +1,12 @@
 .footer {
   padding-bottom: 33px;
 
+  @media (max-width: 360px) {
+    background-color: #fff;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
   & > p {
     font-weight: 300;
     font-size: 12px;
