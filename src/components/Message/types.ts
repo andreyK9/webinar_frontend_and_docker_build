@@ -1,5 +1,5 @@
 export interface MessageProps {
-  iconSrc: string;
+  type: 'error';
   title?: string;
   description?: string;
 }

@@ -15,4 +15,10 @@
     color: #fff;
     cursor: not-allowed;
   }
+
+  &--primary {
+    background-color: var(--orange-color);
+    border: none;
+    color: #fff;
+  }
 }

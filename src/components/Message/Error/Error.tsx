@@ -6,5 +6,5 @@ import { MessageProps } from '../types';
 export const ErrorMessage: React.FC<
   Pick<MessageProps, 'description' | 'title'>
 > = props => {
-  return <Message iconSrc='' {...props} />;
+  return <Message type='error' {...props} />;
 };

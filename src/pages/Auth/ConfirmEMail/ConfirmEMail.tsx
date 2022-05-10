@@ -1,5 +1,6 @@
 import React from 'react';
 import { Form, Formik } from 'formik';
+import { useTranslation } from 'react-i18next';
 
 import { AccountBlocked } from './AccountBlocked';
 import { AuthTitle } from 'pages/Auth/AuthTitle';
@@ -10,25 +11,31 @@ import { ButtonForm } from 'components/Buttons';
 import { useEmailConfirm, useAuthCancel } from 'pages/Auth/hooks';
 
 export const ConfirmEMail: React.FC = () => {
+  const { t } = useTranslation();
   const confirmEMail = useEmailConfirm();
   const cancelAuth = useAuthCancel();
 
   return (
-    <div>
-      <AccountBlocked>
-        <AuthTitle>ConfirmMail</AuthTitle>
+    <div className='auth__form'>
+      <AccountBlocked isBlocked={false}>
+        <AuthTitle>{t('confirm mail form title')}</AuthTitle>
 
-        <ConfirmDescription>ConfirmDescription</ConfirmDescription>
+        <ConfirmDescription>{t('confirm mail description')}</ConfirmDescription>
 
-        <ReadOnlyField name='email' />
+        <Formik
+          initialValues={{ email: 'ololo11@gmail.com', codeFromMail: '' }}
+          onSubmit={confirmEMail}
+        >
+          <Form className='auth__form-instance'>
+            <ReadOnlyField name='email' label={t('email field')} />
 
-        <Formik initialValues={{ codeFromMail: '' }} onSubmit={confirmEMail}>
-          <Form>
-            <TextField name='codeFromMail' />
+            <TextField name='codeFromMail' label={t('from email code')} />
 
-            <ButtonForm>Confirm</ButtonForm>
+            <ButtonForm disabled type='submit'>
+              {t('confirm button')}
+            </ButtonForm>
 
-            <ButtonForm onClick={cancelAuth}>Cancel</ButtonForm>
+            <ButtonForm onClick={cancelAuth}>{t('cancel button')}</ButtonForm>
           </Form>
         </Formik>
 

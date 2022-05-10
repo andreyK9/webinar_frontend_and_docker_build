@@ -1,0 +1,35 @@
+.message {
+  display: flex;
+  gap: 18px;
+
+  &__icon {
+    display: inline-block;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    flex-shrink: 0;
+
+    &--error {
+      background-color: var(--red2-color);
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 19px;
+    color: var(--red2-color);
+  }
+
+  &__description {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+  }
+}

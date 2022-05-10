@@ -1,5 +1,7 @@
 import React from 'react';
 
-export const ConfirmDescription: React.FC = () => {
-  return <div>Description</div>;
+import './Description.scss';
+
+export const ConfirmDescription: React.FC = ({ children }) => {
+  return <p className='description'>{children}</p>;
 };
