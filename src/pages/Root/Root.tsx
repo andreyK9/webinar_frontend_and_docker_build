@@ -7,7 +7,7 @@ import { Footer } from 'pages/Root/Footer';
 import './Root.scss';
 
 export const Root: React.FC = () => (
-  <div className='app'>
+  <div className='my-root'>
     <Header />
 
     <Outlet />

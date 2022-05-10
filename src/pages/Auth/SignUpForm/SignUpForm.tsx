@@ -1,5 +1,6 @@
 import React from 'react';
 import { Form, Formik } from 'formik';
+import { useTranslation } from 'react-i18next';
 
 import { AuthTitle } from 'pages/Auth/AuthTitle';
 import {
@@ -14,12 +15,13 @@ import { ReferralCode } from 'pages/Auth/ReferralCode';
 import { useSignUp, useAuthCancel } from 'pages/Auth/hooks';
 
 export const SignUpForm: React.FC = () => {
+  const { t } = useTranslation();
   const signUp = useSignUp();
   const cancelAuth = useAuthCancel();
 
   return (
-    <div>
-      <AuthTitle>SignUpForm</AuthTitle>
+    <div className='auth__form'>
+      <AuthTitle>{t('sign up form title')}</AuthTitle>
 
       <Formik
         initialValues={{
@@ -31,22 +33,22 @@ export const SignUpForm: React.FC = () => {
         }}
         onSubmit={signUp}
       >
-        <Form>
-          <TextField name='firstName' />
+        <Form className='auth__form-instance'>
+          <TextField name='firstName' label={t('name field')} required />
 
-          <TextField name='lastName' />
+          <TextField name='lastName' label={t('surname field')} required />
 
-          <EmailField name='email' />
+          <EmailField name='email' label={t('email field')} required />
 
-          <PasswordField name='password' />
+          <PasswordField name='password' label={t('password field')} required />
 
           <ReferralCode />
 
-          <CheckboxFiled name='personalAgree'>Personal Agree</CheckboxFiled>
+          <CheckboxFiled name='personalAgree'>{t('personal Agree')}</CheckboxFiled>
 
-          <ButtonForm>Sign up</ButtonForm>
+          <ButtonForm type='submit'>{t('sign up submit button')}</ButtonForm>
 
-          <ButtonForm onClick={cancelAuth}>Cancel</ButtonForm>
+          <ButtonForm onClick={cancelAuth}>{t('cancel button')}</ButtonForm>
         </Form>
       </Formik>
 
