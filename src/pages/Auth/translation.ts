@@ -4,4 +4,6 @@ export const auth = {
     'Если у Вас возникли проблемы обратитесь в службу поддержки клиентов support@esplanade-ms.com или напишите в LiveChat',
   'submit button': 'Войти',
   'sign up button': 'Регистрация',
+  'email field': 'Email',
+  'password field': 'Пароль',
 };

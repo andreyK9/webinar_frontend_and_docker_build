@@ -25,8 +25,12 @@ body {
 }
 
 :root {
+  --input-color: #a7a7a7;
+  --orange-color: #2863ad;
+  --disabled-color: #e6e6e6;
   --black-color: #333;
   --bg-color: linear-gradient(180deg, #34457a 0%, rgba(34, 46, 86, 0.99) 100%);
   --grey2-color: #f3f3f3;
   --inner-bolder-color: #e6e6e6;
+  --button-bolder-radius: 4px;
 }

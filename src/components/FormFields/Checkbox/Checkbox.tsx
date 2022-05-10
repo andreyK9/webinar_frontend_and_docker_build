@@ -3,7 +3,7 @@ import { Field, useField } from 'formik';
 import { FieldComponentType } from '../types';
 
 export const CheckboxFiled: FieldComponentType = ({ children, ...props }) => {
-  const [field, meta] = useField({ ...props, type: 'checkbox' });
+  const [field] = useField({ ...props, type: 'checkbox' });
 
   return (
     <div>
@@ -11,8 +11,6 @@ export const CheckboxFiled: FieldComponentType = ({ children, ...props }) => {
         <Field type='checkbox' {...field} {...props} />
         {children}
       </label>
-
-      {meta.touched && meta.error ? <div className='error'>{meta.error}</div> : null}
     </div>
   );
 };

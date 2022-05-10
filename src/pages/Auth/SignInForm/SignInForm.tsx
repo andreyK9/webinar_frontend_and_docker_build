@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, Formik } from 'formik';
-import { Trans, Translation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 
 import { AuthTitle } from '../AuthTitle';
 import { CheckboxFiled, EmailField, PasswordField } from 'components/FormFields';
@@ -9,14 +9,13 @@ import { ProblemMessage } from 'pages/Auth/ProblemMessage';
 import { useSignUpOpen, useSignIn } from 'pages/Auth/hooks';
 
 export const SignInForm: React.FC = () => {
+  const { t } = useTranslation();
   const onSubmit = useSignIn();
   const openSignUp = useSignUpOpen();
 
   return (
     <div className='auth__form'>
-      <AuthTitle>
-        <Translation>{t => t('sign in form title')}</Translation>
-      </AuthTitle>
+      <AuthTitle>{t('sign in form title')}</AuthTitle>
 
       <Formik
         initialValues={{
@@ -26,20 +25,16 @@ export const SignInForm: React.FC = () => {
         }}
         onSubmit={onSubmit}
       >
-        <Form>
-          <EmailField name='email' />
+        <Form className='auth__form-instance'>
+          <EmailField name='email' label={t('email field')} required />
 
-          <PasswordField name='password' />
+          <PasswordField name='password' label={t('password field')} required />
 
           <CheckboxFiled name='saveData' />
 
-          <ButtonForm>
-            <Trans>submit button</Trans>
-          </ButtonForm>
+          <ButtonForm type='submit'>{t('submit button')}</ButtonForm>
 
-          <ButtonForm onClick={openSignUp}>
-            <Trans>sign up button</Trans>
-          </ButtonForm>
+          <ButtonForm onClick={openSignUp}>{t('sign up button')}</ButtonForm>
         </Form>
       </Formik>
 

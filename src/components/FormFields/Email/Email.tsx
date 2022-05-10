@@ -1,16 +1,16 @@
 import React from 'react';
-import { Field, useField } from 'formik';
+import { useField } from 'formik';
 
+import { InputFieald } from '../InputFieald';
 import { FieldComponentType } from '../types';
+import { Label } from 'components/Label';
 
 export const EmailField: FieldComponentType = ({ label, ...props }) => {
-  const [field, meta] = useField(props);
+  const [field] = useField(props);
 
   return (
-    <>
-      <label htmlFor={props.id || props.name}>{label}</label>
-      <Field className='text-input' {...field} {...props} />
-      {meta.touched && meta.error ? <div className='error'>{meta.error}</div> : null}
-    </>
+    <Label label={label} htmlFor={props.id || props.name} required={props.required}>
+      <InputFieald {...field} {...props} />
+    </Label>
   );
 };

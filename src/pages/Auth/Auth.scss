@@ -11,4 +11,10 @@
     max-width: 697px;
     padding: 80px;
   }
+
+  &__form-instance {
+    > * + * {
+      margin-top: 20px;
+    }
+  }
 }
