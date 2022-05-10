@@ -17,7 +17,7 @@ export const ConfirmEMail: React.FC = () => {
 
   return (
     <div className='auth__form'>
-      <AccountBlocked isBlocked={false}>
+      <AccountBlocked isBlocked={true}>
         <AuthTitle>{t('confirm mail form title')}</AuthTitle>
 
         <ConfirmDescription>{t('confirm mail description')}</ConfirmDescription>

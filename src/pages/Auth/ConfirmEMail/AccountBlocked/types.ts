@@ -1,3 +1,3 @@
 export interface AccountBlockedProps {
-  isBlocked: false;
+  isBlocked: boolean;
 }

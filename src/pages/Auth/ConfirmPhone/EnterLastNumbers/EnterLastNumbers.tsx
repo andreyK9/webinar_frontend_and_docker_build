@@ -1,5 +1,6 @@
-import { Form, Formik } from 'formik';
 import React from 'react';
+import { Form, Formik } from 'formik';
+import { t } from 'i18next';
 
 import { ConfirmDescription } from 'pages/Auth/Description';
 import { PhoneField, ReadOnlyField } from 'components/FormFields';
@@ -12,23 +13,34 @@ export const EnterLastNumbers: React.FC = () => {
 
   return (
     <>
-      <ConfirmDescription>first</ConfirmDescription>
+      <Formik
+        initialValues={{ phone: '+7 (123) 456 78 90', lastWords: '' }}
+        onSubmit={confirmPhone}
+      >
+        <Form className='auth__form-instance'>
+          <ConfirmDescription>
+            {t('phone verification fist description')}
+          </ConfirmDescription>
 
-      <ConfirmDescription>second</ConfirmDescription>
+          <ConfirmDescription>
+            {t('phone verification second description')}
+          </ConfirmDescription>
 
-      <ConfirmDescription>third</ConfirmDescription>
+          <ConfirmDescription>
+            {t('phone verification third description')}
+          </ConfirmDescription>
 
-      <Formik initialValues={{ lastWords: '' }} onSubmit={confirmPhone}>
-        <Form>
-          <ReadOnlyField name='phone' />
+          <ReadOnlyField name='phone' label={t('phone field')} />
 
-          <PhoneField name='lastWords' />
+          <PhoneField required name='lastWords' label={t('lase numbbers field')} />
 
-          <ButtonForm>Submit</ButtonForm>
+          <ButtonForm primary type='submit'>
+            {t('confirm button')}
+          </ButtonForm>
 
-          <ButtonForm>Repeat</ButtonForm>
+          <ButtonForm>{t('repeat button')}</ButtonForm>
 
-          <ButtonForm onClick={cancel}>Cancel</ButtonForm>
+          <ButtonForm onClick={cancel}>{t('cancel button')}</ButtonForm>
         </Form>
       </Formik>
     </>
